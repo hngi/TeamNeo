@@ -31,13 +31,16 @@ body{
     justify-content: center;
     align-items: center;
     padding:20px;
+
 }
 #banner img{
    width: 350px;
 }
 #banner h1{
     height: 50px;
-    padding-top: 60px;
+}
+#banner h3{
+      padding-top: 30px;
 }
 
 
