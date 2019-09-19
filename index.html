@@ -1,108 +1,194 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>neo login</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <section id="form-wrapper">
-            <div id="form-header">
-                <h2>Login Account</h2>
-                <div id="api-bar">
-                        <h3>Log in with</h3>
-                        <div class="google icon-container">
-                                <a href="#"><i class="fab fa-google"></i></a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Team NEO</title>
+    <link href="./content/plugins/bootstrap-4/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./content/plugins/MDBootstrap/css/mdb.min.css" rel="stylesheet" />
+    <link href="./content/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom css -->
+    <link href="./content/css/custom.css" rel="stylesheet">
+    <!-- Site core CSS file -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon.ico" type="image/ico" />
+
+</head>
+<body class="bg-amber">
+
+<section  style="padding: 0px !important;">
+
+
+    <div class="row no-gutters">
+        <div class="col-12 col-lg-4 col-md-6 col-sm-12">
+
+            <!-- Card -->
+            <div class="card" style="min-height: 600px !important;">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+
+
+                        <div class="card-body">
+
+                            <img src="./content/images/team-neo-logo.png" width="180" class=" mx-auto d-block" alt="">
+
+                            <!-- Title -->
+                            <!--<h2 class="card-title text-center blue-text mt-3"><a>Account Login</a></h2>-->
+
+                            <div class="form-group clearfix page-link mt-5">
+                                <span class="pull-left text-muted">Login Using</span>
+                                <span class="pull-right">
+                            <a href="#" class="mr-2">
+                                <img src="./content/images/google.svg" height="20" alt="Google">
+                            </a>
+                            <a href="#">
+                                <img src="./content/images/facebook.svg" height="20"  alt="Facebook">
+                            </a>
+                        </span>
+                            </div>
+
+
+                            <!-- Title -->
+                            <h5 class="card-title text-center text-muted mt-5"><a>Account Login</a></h5>
+
+                            <form action="">
+
+                                <div class="md-form input-group mt-3 mb-5">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text md-addon">
+                                            <i class="fa fa-envelope fa-lg blue-text"></i>
+                                        </div>
+                                    </div>
+                                    <input name="Username" type="text" placeholder="Email" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+
+                                <div class="md-form input-group mb-5">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text md-addon">
+                                            <i class="fa fa-key fa-lg blue-text"></i>
+                                        </div>
+                                    </div>
+                                    <input name="Password" type="password" placeholder="Password" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+                                <!-- Default unchecked -->
+                                <div class="form-group clearfix">
+                                    <div class="custom-control custom-checkbox pull-left">
+                                        <input type="checkbox" name="RememberMe" class="custom-control-input" id="defaultUnchecked">
+                                        <label class="custom-control-label" for="defaultUnchecked">Keep Me Logged In</label>
+                                    </div>
+                                    <a href="" class="pull-right">Forgot Password?</a>
+                                </div>
+
+                                <div class="form-group clearfix">
+
+                                    <a href="#" class="btn btn-primary btn-lg btn-block mt-2">Login In</a>
+
+                                </div>
+                                <div class="form-group text-center">
+                                    <a class="click-tab" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register"
+                                       >I don't have an Account</a>
+                                </div>
+
+                            </form>
+                            <!-- Button -->
+
                         </div>
-                        <div class="facebook ficon-container">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                    </div>
+                    <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+
+                        <div class="card-body">
+
+                            <img src="./content/images/team-neo-logo.png" width="180" class=" mx-auto d-block" alt="">
+
+                            <!-- Title -->
+                            <!--<h2 class="card-title text-center blue-text mt-3"><a>Account Login</a></h2>-->
+
+
+                            <!-- Title -->
+                            <h5 class="card-title text-center text-muted mt-2"><a>Register</a></h5>
+
+                            <form action="">
+
+                                <div class="md-form input-group mt-3 mb-5">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text md-addon">
+                                            <i class="fa fa-hashtag fa-lg blue-text"></i>
+                                        </div>
+                                    </div>
+                                    <input name="FullName" type="text" placeholder="Full Name" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+
+                                <div class="md-form input-group mt-3 mb-5">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text md-addon">
+                                            <i class="fa fa-envelope fa-lg blue-text"></i>
+                                        </div>
+                                    </div>
+                                    <input name="NewUsername" type="text" placeholder="Email" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+
+                                <div class="md-form input-group mb-5">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text md-addon">
+                                            <i class="fa fa-key fa-lg blue-text"></i>
+                                        </div>
+                                    </div>
+                                    <input name="NewPassword" type="password" placeholder="Password" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+
+                                <div class="md-form input-group mb-5">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text md-addon">
+                                            <i class="fa fa-key fa-lg blue-text"></i>
+                                        </div>
+                                    </div>
+                                    <input name="Confirm Password" type="password" placeholder="Confirm Password" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+
+
+                                <div class="form-group clearfix">
+
+                                    <a href="#" class="btn btn-primary btn-lg btn-block mt-2">Login In</a>
+
+                                </div>
+                                <div class="form-group text-center">
+                                    I already have an Account! <a class="click-tab" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login"
+                                    >Login in</a>
+                                </div>
+
+                            </form>
+                            <!-- Button -->
+
                         </div>
+
+
+
+                    </div>
                 </div>
-               
+
+
             </div>
-            
-            <section id="divide">
-                    <h3 class="divider">OR LOGIN WITH</h3>
-            </section>
+            <!-- Card -->
 
-            <form action="login.php" method="post">
-                <fieldset>
-                    <input type="email" name="email" id="email" placeholder="Email ID" required>
-                    <img src="./email-64.png" alt="">
-                </fieldset>
+        </div>
+        <div class="col-6 col-lg-8 col-md-6 col-sm-12 d-none d-sm-none d-md-block">
 
-                <fieldset>
-                    <input type="password" name="password" id="password" placeholder="Password" required>
-                    <img src="./key-64.png" alt="">
-                </fieldset>
+            <img src="./content/images/landing-photo-1.svg" width="75%" class="rounded mx-auto d-block center" alt="Responsive image">
+        </div>
+    </div>
 
-                <span class="check">
-                    <input type="checkbox" name="checkbox" id="checkbox">
-                    <label for="checkbox">Keep me logged in</label>
-                    <a href="#">Forgot Password?</a>
-                </span>
-                <button type="submit" name="submit">Log in</button>
-            </form>
-            
-        </section>
+</section>
 
-        <section id="form-wrapper" class="sign-up">
-            <div id="form-header">
-                <h2>Register Account</h2>
-                <div id="api-bar">
-                        <h3>Sign up with</h3>
-                        <div class="google icon-container">
-                                <a href="#"><i class="fab fa-google"></i></a>
-                        </div>
-                        <div class="facebook ficon-container">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                </div>
-               
-            </div>
-            <section id="divide">
-                    <h3 class="divider">Register below</h3>
-            </section>
-            <form action="signup.php" method="post">
-                    <fieldset>
-                            <input type="text" name="name" id="name" placeholder="Full name" required>
-                            <img src="./contacts-64.png" alt="">
-                        </fieldset>
-                <fieldset>
-                    <input type="email" name="email" id="reg-email" placeholder="Email" required>
-                    <img src="./email-64.png" alt="">
-                </fieldset>
-                <fieldset>
-                    <input type="password" name="password" id="reg-password" placeholder="Password" required>
-                    <img src="./key-64.png" alt="">
-                </fieldset>
-                <button type="submit" name="submit">Sign up</button>
-            </form>
-            <h3>Already have an account? 
-                <span><a id="sign-in-btn" href="#">Sign in</a></span>
-            </h3>
-        </section>
 
-        <section id="banner">
-            <h3 class="mobile-header">
-                WELCOME TO TEAM NEO
-            </h3>
-            <h3 class="mobile-footer">Don't have an account? 
-                    <span><a id="sign-up-btn" href="#">Sign up</a></span>
-                </h3>
-            <h1>WELCOME TO TEAM NEO</h1>
-            <img src="./undraw_Hello_qnas.svg" alt="bg" srcset="">
-            <h3>Don't have an account? 
-                    <span><a id="sign-up-btn" href="#">Sign up</a></span>
-                </h3>
-        </section>
-
-    
-        <div class="round"></div>
-        <div class="round-top"></div>
-        <script src="app.js"></script>
-    </body>
+<script src="./content/plugins/modernizr.js"></script>
+<script src="./content/plugins/jquery/dist/jquery.min.js"></script>
+<script src="./content/plugins/bootstrap-4/js/bootstrap.bundle.min.js"></script>
+<script src="./content/plugins/MDBootstrap/js/tether.min.js"></script>
+<script src="./content/plugins/MDBootstrap/js/mdb.min.js"></script>
+<script>
+    $( ".click-tab" ).on( "click", function() {
+        $( ".click-tab" ).removeClass( "active ");
+    });
+</script>
+</body>
 </html>
