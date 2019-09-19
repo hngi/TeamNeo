@@ -267,6 +267,7 @@ transition: transform .3s linear, opacity .5s linear;
        height: 12vh;
        overflow:hidden;
        display: block;
+       
    }
    .mobile-header{
        display: block;
@@ -274,6 +275,9 @@ transition: transform .3s linear, opacity .5s linear;
        font-size: 30px;
        color: black;
        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-   font-weight: 600;
+    font-weight: 600;
+   }
+   #banner h3{
+       padding-top: 60px;
    }
 }
