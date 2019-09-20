@@ -38,6 +38,9 @@
 
 
                 </div>
+                <div class="col-md-12">
+                    <div data-alerts="alerts"  data-ids="myid" data-fade="5000"></div>
+                </div>
 
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
@@ -63,7 +66,7 @@
                             <!-- Title -->
                             <h5 class="text-center text-muted mt-2">Account Login</h5>
 
-                            <form action="" id="loginForm">
+                            <form method="post" id="loginForm">
 
                                 <div class="md-form input-group  input-group-lg mt-1 mb-1">
                                     <div class="input-group-prepend">
@@ -71,7 +74,7 @@
                                             <i class="fa fa-envelope fa-lg blue-text"></i>
                                         </div>
                                     </div>
-                                    <input name="Username" type="text" placeholder="Email" class="form-control" aria-label="Text input with checkbox">
+                                    <input name="Username" id="Username" type="text" placeholder="Email" class="form-control" aria-label="Text input with checkbox">
                                 </div>
 
                                 <div class="md-form input-group  input-group-lg mb-5">
@@ -80,7 +83,7 @@
                                             <i class="fa fa-key fa-lg blue-text"></i>
                                         </div>
                                     </div>
-                                    <input name="Password" type="password" placeholder="Password" class="form-control" aria-label="Text input with checkbox">
+                                    <input name="Password" id="Password" type="password" placeholder="Password" class="form-control" aria-label="Text input with checkbox">
                                 </div>
                                 <!-- Default unchecked -->
                                 <div class="form-group clearfix">
@@ -159,7 +162,7 @@
                                 <div class="form-group clearfix mt-2 text-center">
 
                                     <button type="submit" class="btn btn-primary btn-lg">Register</button>
-                                    <button type="reset" class="btn btn-light btn-lg">Cancel</button>
+                                    <button type="reset" class="btn btn-light btn-lg">Reset</button>
 
                                 </div>
                                 <div class="form-group text-center">
@@ -197,6 +200,7 @@
 <script src="./content/plugins/bootstrap-4/js/bootstrap.bundle.min.js"></script>
 <script src="./content/plugins/MDBootstrap/js/tether.min.js"></script>
 <script src="./content/plugins/MDBootstrap/js/mdb.min.js"></script>
+<script src="./content/plugins/jquery-bs-alerts/dist/jquery.bsAlerts.min.js"></script>
 <!---->
 <script src="./content/scripts/jquery.validate.min.js"></script>
 <script src="./content/scripts/jquery.validate.additional-methods.min.js"></script>
@@ -207,31 +211,43 @@
     });
 </script>
 <script>
+    //Form Validation
     $("#loginForm").validate({
         rules: {
             Username: {
-                required: true
+                required: true,
+                email: true
             },
             Password: {
-                required: true
-                //minlength: 3
+                required: true,
+                minlength: 6
             }
 
+        },
+        messages: {
+            Username: {
+                email: "Enter a valid email address!"
+            },
+            Password: {
+                minlength: "Password must have more than 5 characters!"
+            }
         }
     });
 </script>
 <script>
+    //Form Validation
     $("#registrationForm").validate({
         rules: {
             FullName: {
                 required: true
             },
             NewUsername: {
-                required: true
+                required: true,
+                email: true
             },
             NewPassword: {
                 required: true,
-                //minlength: 3
+                minlength: 6
             },
             //
             ConfirmPassword: {
@@ -240,6 +256,12 @@
 
         },
         messages: {
+            NewUsername: {
+                email: "Enter a valid email address!"
+            },
+            NewPassword: {
+                minlength: "Password must have more than 5 characters!"
+            },
             ConfirmPassword: {
                 equalTo: "Passwords do not match!"
             }
@@ -249,40 +271,101 @@
 <script>
     $(document).ready(function() {
 
+        //Authenticate User
+        $('#loginForm').submit(function(event) {
+
+            var url = window.location.href;
+            var _localStorage = window.localStorage;
+            var _baseUrl = url.replace("/index.html", "");
+
+
+
+            var _userName =  $('input[name=Username]').val();
+            var _password =  $('input[name=Password]').val();
+
+            console.info(_userName);
+            console.info(_password);
+            console.info(_baseUrl);
+
+            var _storageKey = _userName + _password;
+            // Retrieve
+            var _storageValue = _localStorage.getItem(_storageKey);
+
+            if(_storageValue === null || _storageValue === "")
+            {
+                $(document).trigger("add-alerts", [
+                    {
+                        "message": "Invalid Username or Password!",
+                        "priority": 'danger'
+                    }
+                ]);
+
+            }else{
+
+                $(document).trigger("add-alerts", [
+                    {
+                        "message": "Login successful!",
+                        "priority": 'success'
+                    }
+                ]);
+                window.location.replace(_baseUrl + "/views/home.html");
+            }
+
+
+//
+            event.preventDefault();
+        });
+
+    });
+</script>
+<script>
+    $(document).ready(function() {
+
         // process the form
         $('#registrationForm').submit(function(event) {
+
+            var url = window.location.href;
+            var _localStorage = window.localStorage;
+            var _baseUrl = url.replace("/index.html", "");
+
 
             // get the form data
             // there are many ways to get this data using jQuery (you can use the class or id also)
             var formData = {
-                'FullName'              : $('input[name=FullName]').val(),
-                'NewUserName'             : $('input[name=NewUsername]').val(),
-                'Password'    : $('input[name=NewPassword]').val()
+                fullName  : $('input[name=FullName]').val(),
+                userName : $('input[name=NewUsername]').val(),
+                password : $('input[name=NewPassword]').val()
             };
 
-            formData = JSON.stringify(formData);
+            var _storageKey = formData.userName + formData.password;
+            // Store
+            localStorage.setItem(_storageKey, formData);
+            // Check if data storage is successful
+            var _storageValue = _localStorage.getItem(_storageKey);
 
-            console.info(formData);
+            if(_storageValue === null || _storageValue === "")
+            {
+                $(document).trigger("add-alerts", [
+                    {
+                        "message": "Oops Something went wrong..! ",
+                        "priority": 'danger'
+                    }
+                ]);
 
-            // process the form
-            $.ajax({
-                type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-                url         : 'saveAuthentication.php', // the url where we want to POST
-                contentType: "application/json",
-                data        : formData, // our data object
-                dataType    : 'json', // what type of data do we expect back from the server
-                encode: true
-            })
-            // using the done promise callback
-                .done(function(data) {
+            }else{
 
-                    // log data to the console so we can see
-                    console.log(data);
+                $(document).trigger("add-alerts", [
+                    {
+                        "message": "Profile creation successful!",
+                        "priority": 'success'
+                    }
+                ]);
+                setTimeout(function(){
+                    window.location.reload();
+                }, 5000);
+            }
 
-                    // here we will handle errors and validation messages
-                });
 
-            // stop the form from submitting the normal way and refreshing the page
             event.preventDefault();
         });
 
