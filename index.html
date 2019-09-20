@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Team NEO</title>
+    <link href="./content/plugins/bootstrap-4/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./content/plugins/MDBootstrap/css/mdb.min.css" rel="stylesheet" />
+    <link href="./content/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom css -->
+    <link href="./content/css/custom.css" rel="stylesheet">
+    <!-- Site core CSS file -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon.ico" type="image/ico" />
+
+</head>
+<body class="bg-amber">
+
+<section  style="padding: 0px !important;">
+
+
+    <div class="row no-gutters">
+        <div class="col-xl-4 col-lg-4 col-sm-12 col-12">
+
+            <!-- Card -->
+            <div class="card  h-100 min-vh-100" >
+
+                <div class="card-body">
+
+
+                    <img src="./content/images/team-neo-logo.png" width="180" class=" mx-auto d-block center" alt="Logo">
+
+
+                </div>
+
+                <div class="card-body p-2 m-2 bg-amber d-block d-sm-block d-md-block d-lg-none d-xl-none">
+
+                    <img src="./content/images/landing-photo-1.svg" width="25%" class="rounded center d-flex align-items-center" alt="Responsive image">
+
+
+                </div>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+
+
+                        <div class="card-body">
+                            <!-- Title -->
+                            <!--<h2 class="card-title text-center blue-text mt-3"><a>Account Login</a></h2>-->
+
+                            <div class="form-group clearfix border border-light mt-1 p-1">
+                                <span class="pull-left text-muted lead">Login Using</span>
+                                <span class="pull-right">
+                                    <a href="#" class="mr-2">
+                                        <img src="./content/images/google.svg" height="35" alt="Google">
+                                    </a>
+                                    <a href="#">
+                                        <img src="./content/images/facebook.svg" height="35"  alt="Facebook">
+                                    </a>
+                                </span>
+                            </div>
+
+
+                            <!-- Title -->
+                            <h5 class="text-center text-muted mt-2">Account Login</h5>
+
+                            <form action="">
+
+                                <div class="md-form input-group  input-group-lg mt-1 mb-1">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text md-addon">
+                                            <i class="fa fa-envelope fa-lg blue-text"></i>
+                                        </div>
+                                    </div>
+                                    <input name="Username" type="text" placeholder="Email" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+
+                                <div class="md-form input-group  input-group-lg mb-5">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text md-addon">
+                                            <i class="fa fa-key fa-lg blue-text"></i>
+                                        </div>
+                                    </div>
+                                    <input name="Password" type="password" placeholder="Password" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+                                <!-- Default unchecked -->
+                                <div class="form-group clearfix">
+                                    <div class="custom-control custom-checkbox pull-left">
+                                        <input type="checkbox" name="RememberMe" class="custom-control-input" id="defaultUnchecked">
+                                        <label class="custom-control-label" for="defaultUnchecked">Keep Me Logged In</label>
+                                    </div>
+                                    <a href="" class="pull-right">Forgot Password?</a>
+                                </div>
+
+                                <div class="form-group clearfix">
+
+                                    <a href="#" class="btn btn-primary btn-lg btn-block mt-2">Login In</a>
+
+                                </div>
+                                <div class="form-group text-center">
+                                    <a class="click-tab" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register"
+                                       >I don't have an Account</a>
+                                </div>
+
+                            </form>
+                            <!-- Button -->
+
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+
+                        <div class="card-body">
+                            <!-- Title -->
+                            <!--<h2 class="card-title text-center blue-text mt-3"><a>Account Login</a></h2>-->
+
+
+                            <!-- Title -->
+                            <h5 class="text-center text-muted">Register</h5>
+
+                            <form action="saveAuthentication.php" method="POST" id="registrationForm">
+
+                                <div class="md-form input-group input-group-lg mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text md-addon">
+                                            <i class="fa fa-hashtag fa-lg blue-text"></i>
+                                        </div>
+                                    </div>
+                                    <input name="FullName" id="=FullName" type="text" placeholder="Full Name" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+
+                                <div class="md-form input-group input-group-lg mt-1 mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text md-addon">
+                                            <i class="fa fa-envelope fa-lg blue-text"></i>
+                                        </div>
+                                    </div>
+                                    <input name="NewUsername" id="NewUsername" type="email" placeholder="Email" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+
+                                <div class="md-form input-group input-group-lg mt-1 mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text md-addon">
+                                            <i class="fa fa-key fa-lg blue-text"></i>
+                                        </div>
+                                    </div>
+                                    <input name="NewPassword" id="NewPassword" type="password" placeholder="Password" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+
+                                <div class="md-form input-group input-group-lg mt-1 mb-4">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text md-addon">
+                                            <i class="fa fa-key fa-lg blue-text"></i>
+                                        </div>
+                                    </div>
+                                    <input name="ConfirmPassword" id="ConfirmPassword" type="password" placeholder="Confirm Password" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+
+
+                                <div class="form-group clearfix mt-2 text-center">
+
+                                    <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                                    <button type="reset" class="btn btn-light btn-lg">Cancel</button>
+
+                                </div>
+                                <div class="form-group text-center">
+                                    I already have an Account! <a class="click-tab" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login"
+                                    >Login in</a>
+                                </div>
+
+                            </form>
+                            <!-- Button -->
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- Card -->
+
+        </div>
+        <div class="col-lg-8 col-lg-8  d-none d-sm-none d-md-none d-lg-block d-xl-block">
+
+            <img src="./content/images/landing-photo-1.svg" width="65%" class="rounded center d-flex align-items-center" alt="Responsive image">
+
+        </div>
+    </div>
+
+</section>
+
+
+<script src="./content/plugins/modernizr.js"></script>
+<script src="./content/plugins/jquery/dist/jquery.min.js"></script>
+<script src="./content/plugins/bootstrap-4/js/bootstrap.bundle.min.js"></script>
+<script src="./content/plugins/MDBootstrap/js/tether.min.js"></script>
+<script src="./content/plugins/MDBootstrap/js/mdb.min.js"></script>
+<script>
+    $( ".click-tab" ).on( "click", function() {
+        $( ".click-tab" ).removeClass( "active ");
+    });
+</script>
+<script>
+    $(document).ready(function() {
+
+        // process the form
+        $('#registrationForm').submit(function(event) {
+
+            // get the form data
+            // there are many ways to get this data using jQuery (you can use the class or id also)
+            var formData = {
+                'FullName'              : $('input[name=FullName]').val(),
+                'NewUserName'             : $('input[name=NewUsername]').val(),
+                'Password'    : $('input[name=NewPassword]').val()
+            };
+
+            formData = JSON.stringify(formData);
+
+            console.info(formData);
+
+            // process the form
+            $.ajax({
+                type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                url         : 'saveAuthentication.php', // the url where we want to POST
+                contentType: "application/json",
+                data        : formData, // our data object
+                dataType    : 'json', // what type of data do we expect back from the server
+                encode: true
+            })
+            // using the done promise callback
+                .done(function(data) {
+
+                    // log data to the console so we can see
+                    console.log(data);
+
+                    // here we will handle errors and validation messages
+                });
+
+            // stop the form from submitting the normal way and refreshing the page
+            event.preventDefault();
+        });
+
+    });
+</script>
+</body>
+</html>

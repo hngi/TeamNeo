@@ -1,0 +1,39 @@
+
+body {
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+.h-100{
+    display: block;
+    height: 100% !important;
+}
+/*Center-Element*/
+
+.bg-amber{
+    background-color: #ffe57f;
+
+}
+.bg-white{
+    background-color: #ffffff;
+    height: 100%;
+
+}
+.bg-landing {
+    background-image: url("../images/landing-photo-1.svg");
+    background-repeat: no-repeat;
+
+}
