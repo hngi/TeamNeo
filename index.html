@@ -274,9 +274,11 @@
         //Authenticate User
         $('#loginForm').submit(function(event) {
 
-            var url = window.location.href;
+            var getUrl = window.location;
+            var _baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+//            var url = window.location.href;
             var _localStorage = window.localStorage;
-            var _baseUrl = url.replace("/index.html", "");
+//            var _baseUrl = url.replace("/index.html", "");
 
 
 
@@ -324,9 +326,11 @@
         // process the form
         $('#registrationForm').submit(function(event) {
 
-            var url = window.location.href;
+            var getUrl = window.location;
+            var _baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+//            var url = window.location.href;
             var _localStorage = window.localStorage;
-            var _baseUrl = url.replace("/index.html", "");
+//            var _baseUrl = url.replace("/index.html", "");
 
 
             // get the form data
