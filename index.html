@@ -310,6 +310,8 @@
                         "priority": 'success'
                     }
                 ]);
+                _baseUrl = _baseUrl + "/";
+                _baseUrl = _baseUrl.replace("//", "/");
                 window.location.replace(_baseUrl + "views/home.html");
             }
 
@@ -366,7 +368,7 @@
                 ]);
                 setTimeout(function(){
                     window.location.reload();
-                }, 5000);
+                }, 3000);
             }
 
 
