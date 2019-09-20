@@ -63,7 +63,7 @@
                             <!-- Title -->
                             <h5 class="text-center text-muted mt-2">Account Login</h5>
 
-                            <form action="">
+                            <form action="" id="loginForm">
 
                                 <div class="md-form input-group  input-group-lg mt-1 mb-1">
                                     <div class="input-group-prepend">
@@ -93,7 +93,7 @@
 
                                 <div class="form-group clearfix">
 
-                                    <a href="#" class="btn btn-primary btn-lg btn-block mt-2">Login In</a>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block mt-2">Login In</button>
 
                                 </div>
                                 <div class="form-group text-center">
@@ -197,9 +197,53 @@
 <script src="./content/plugins/bootstrap-4/js/bootstrap.bundle.min.js"></script>
 <script src="./content/plugins/MDBootstrap/js/tether.min.js"></script>
 <script src="./content/plugins/MDBootstrap/js/mdb.min.js"></script>
+<!---->
+<script src="./content/scripts/jquery.validate.min.js"></script>
+<script src="./content/scripts/jquery.validate.additional-methods.min.js"></script>
+<!---->
 <script>
     $( ".click-tab" ).on( "click", function() {
         $( ".click-tab" ).removeClass( "active ");
+    });
+</script>
+<script>
+    $("#loginForm").validate({
+        rules: {
+            Username: {
+                required: true
+            },
+            Password: {
+                required: true
+                //minlength: 3
+            }
+
+        }
+    });
+</script>
+<script>
+    $("#registrationForm").validate({
+        rules: {
+            FullName: {
+                required: true
+            },
+            NewUsername: {
+                required: true
+            },
+            NewPassword: {
+                required: true,
+                //minlength: 3
+            },
+            //
+            ConfirmPassword: {
+                equalTo: "#NewPassword"
+            }
+
+        },
+        messages: {
+            ConfirmPassword: {
+                equalTo: "Passwords do not match!"
+            }
+        }
     });
 </script>
 <script>
